@@ -1,0 +1,17 @@
+.navbar-inverse .navbar-brand {
+    margin: 0.4em;
+}
+
+i.glyphicon.glyphicon-home.tenancy-icon {
+    margin-right: 1.5em;
+}
+.nav-bar-content {
+    margin-top: 0.5em
+}
+
+button.btn.btn-default.dropdown-toggle {
+    background-color: inherit;
+    border-color: inherit;
+    border-width: 0px;
+    color: white;
+}

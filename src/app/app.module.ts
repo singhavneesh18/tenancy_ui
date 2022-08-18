@@ -5,20 +5,24 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LeftPanelComponent } from './panels/left-panel/left-panel.component';
 import { HeaderComponent } from './panels/header/header.component';
-import { FooterComponent } from './panels/footer/footer.component';
 import { ContentComponent } from './panels/content/content.component';
+import { TenantDashboardComponent } from './panels/content/tenant/tenant-dashboard/tenant-dashboard.component';
+
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     LeftPanelComponent,
     HeaderComponent,
-    FooterComponent,
-    ContentComponent
+    ContentComponent,
+    TenantDashboardComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule, 
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

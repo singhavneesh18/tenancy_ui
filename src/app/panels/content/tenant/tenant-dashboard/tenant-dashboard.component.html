@@ -1,0 +1,41 @@
+<div class="container-fluid">
+  <div class="col-md-6">
+    <div class="panel panel-primary">
+      <div class="panel-heading">CRUD Tenants</div>
+      <div class="panel-body">
+        Tenants List
+        <table class="table">
+            <thead>
+              <tr>
+                <th>Firstname</th>
+                <th>Lastname</th>
+                <th>Email</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let tenant of tenants;">
+                <td>{{tenant.id}}</td>
+                <td>{{tenant.name}}</td>
+                <td>{{tenant.email}}</td>
+                <td>Delete</td>
+              </tr>
+            </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Panel title</h3>
+      </div>
+      <div class="panel-body">
+        Panel content
+      </div>
+    </div>
+  </div>
+
+    
+    
+  </div>
