@@ -9,6 +9,7 @@ import { ContentComponent } from './panels/content/content.component';
 import { TenantDashboardComponent } from './panels/content/tenant/tenant-dashboard/tenant-dashboard.component';
 
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule,
     AppRoutingModule, 
-    HttpClientModule
+    HttpClientModule,
+    FormsModule, ReactiveFormsModule   
   ],
   providers: [],
   bootstrap: [AppComponent]

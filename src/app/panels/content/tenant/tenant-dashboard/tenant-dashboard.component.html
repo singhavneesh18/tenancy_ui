@@ -1,41 +1,125 @@
 <div class="container-fluid">
-  <div class="col-md-6">
-    <div class="panel panel-primary">
-      <div class="panel-heading">CRUD Tenants</div>
-      <div class="panel-body">
-        Tenants List
-        <table class="table">
-            <thead>
-              <tr>
-                <th>Firstname</th>
-                <th>Lastname</th>
-                <th>Email</th>
-                <th>Action</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr *ngFor="let tenant of tenants;">
-                <td>{{tenant.id}}</td>
-                <td>{{tenant.name}}</td>
-                <td>{{tenant.email}}</td>
-                <td>Delete</td>
-              </tr>
-            </tbody>
-        </table>
-      </div>
-    </div>
-  </div>
-  <div class="col-md-6">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h3 class="panel-title">Panel title</h3>
-      </div>
-      <div class="panel-body">
-        Panel content
-      </div>
+  <div class="panel panel-primary">
+    <div class="panel-heading">Tenants List</div>
+    <div class="panel-body">
+      Tenants List
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email Address</th>
+            <th>Permanent Address</th>
+            <th>Start date of renting</th>
+            <th>End date of renting</th>
+            <th>Current renting</th>
+            <th>Pan Number</th>
+            <th>Aadhar Number</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let tenant of tenants; let i = index">
+            <td>{{ tenant.name }}</td>
+            <td>{{ tenant.emailId }}</td>
+            <td>{{ tenant.permanentAddress }}</td>
+            <td>{{ tenant.startDateOfRenting }}</td>
+            <td>{{ tenant.endDateOfRenting }}</td>
+            <td>{{ tenant.currentlyRenting }}</td>
+            <td>{{ tenant.panNumber }}</td>
+            <td>{{ tenant.aadharNumber }}</td>
+            <td>
+              <button class="btn btn-primary" (click)="deleteTenant(tenant, i)">
+                Edit
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 
-    
-    
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">Add new tenant</h3>
+    </div>
+    <div class="panel-body">
+      <form
+        [formGroup]="tenantFormGroup"
+        (ngSubmit)="addNewTenant(tenantFormGroup)"
+      >
+        <div class="form-row">
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input
+                type="name"
+                class="form-control"
+                id="name"
+                placeholder="Please enter full name"
+                formControlName="name"
+              />
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for="emailId">Email Address</label>
+              <input
+                type="emailId"
+                class="form-control"
+                id="emailId"
+                placeholder="Please enter email id like abc@mail.com"
+                formControlName="emailId"
+              />
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for="permanentAddress">Address</label>
+              <input
+                type="permanentAddress"
+                class="form-control"
+                id="permanentAddress"
+                placeholder="Please enter full address"
+                formControlName="permanentAddress"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for="startDateOfRenting">Start Date of Renting</label>
+              <input
+                type="startDateOfRenting"
+                class="form-control"
+                id="startDateOfRenting"
+                placeholder="Please enter full address"
+                formControlName="startDateOfRenting"
+              />
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label for="endDateOfRenting">Start Date of Renting</label>
+              <input
+                type="endDateOfRenting"
+                class="form-control"
+                id="endDateOfRenting"
+                placeholder="Please enter full address"
+                formControlName="startDateOfRenting"
+              />
+            </div>
+          </div>
+          <div class="col-md-4">
+            soapokda
+          </div>
+        </div>
+        <div class="form-row col-md-12">
+          <button type="submit">Save</button>
+        </div>
+
+        
+      </form>
+    </div>
   </div>
+</div>
